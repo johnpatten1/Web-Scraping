@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Info</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars!</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Start Scraping</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <!--Latest Mars News-->
+    <div class="row" id="mars-news">
+      <div class="col-sm-12">
+        <h2>Latest Mars News</h2>
+        <h4 class="heading">{{mars.title}}</h4>
+        <small>{{mars.content}}</small>
+      </div>
+    </div>
+
+  </div>
+
+<div class="col-xs-12" style="height:30px;"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Featured Mars Image</h2>
+      <img src={{mars.jpl_pic}} alt="JPL" class="img-responsive">
+    </div>
+    <div class="col-sm-4">
+      <h2>Current Weather on Mars</h2>
+      <large>{{mars.tweet}}</large>
+      <span></span>
+      <h2>Mars Facts</h2>
+      <table class="tableclass">
+        <table>
+          {{mars.facts|safe }}
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-12" style="height:30px;"></div>
+
+<div class="container text-center">
+  <h2>Mars Hemispheres</h2>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <h4>{{mars.hemispheres[0]['title']}}</h4>
+      <img src={{mars.hemispheres[0]['img_url']}} alt= {{mars.hemispheres[0]['title']}} class="img-responsive">
+    </div>
+    <div class="col-sm-3">
+      <h4>{{mars.hemispheres[1]['title']}}</h4>
+      <img src={{mars.hemispheres[1]['img_url']}} alt= {{mars.hemispheres[1]['title']}} class="img-responsive">
+    </div>
+    <div class="col-sm-3">
+      <h4>{{mars.hemispheres[2]['title']}}</h4>
+      <img src={{mars.hemispheres[2]['img_url']}} alt= {{mars.hemispheres[2]['title']}} class="img-responsive">
+    </div>
+    <div class="col-sm-3">
+      <h4>{{mars.hemispheres[3]['title']}}</h4>
+      <img src={{mars.hemispheres[3]['img_url']}} alt= {{mars.hemispheres[3]['title']}} class="img-responsive">
+    </div>
+  </div>
+
+</body>
+
+</html>
+
